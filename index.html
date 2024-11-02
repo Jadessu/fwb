@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FWB</title>
+  <link rel="icon" href="./fwbOrange.png" type="image/png">
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Full overlay on top of the video */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3); /* Darker overlay */
+      backdrop-filter: blur(0px);
+      z-index: 1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Gradient overlay at the bottom */
+    .bottom-gradient-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 20%; /* Adjust height as needed */
+      background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+      z-index: 2;
+    }
+  </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-black text-white overflow-hidden">
+
+  <!-- Background Video Wrapper with Overlay -->
+  <div class="absolute inset-0 overflow-hidden">
+    <video autoplay loop  class="object-cover w-full h-full" onloadstart="this.volume=0.3">
+      <source src="./music2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <!-- Overlay Div -->
+    <div class="overlay"></div>
+  </div>
+
+  <!-- Gradient Overlay at the Bottom to Cover Lyrics -->
+  <div class="bottom-gradient-overlay"></div>
+
+  <!-- Main Content -->
+  <div class="content text-center space-y-8">
+    <!-- Event Title -->
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold">A Friendsgiving Original!</h1>
+    
+    <!-- Logo Image -->
+    <img src="./fwbOrange.png" alt="Event Logo" class="mx-auto w-4/4 sm:w-2/3 lg:w-1/2">
+    
+    <!-- Coming Soon Text -->
+    <p class="text-xl sm:text-2xl lg:text-3xl font-light">Coming Soon...</p>
+    <a href="https://instagram.com/doc.belit" target="_blank" class="text-sm sm:text-base text-gray-300 hover:text-white transition-colors">
+      Follow us on Instagram
+    </a>
+  </div>
+
+  <!-- Footer Credit -->
+  <div class="absolute bottom-0 right-0 p-4 text-sm text-gray-400 z-20 cursor-pointer">
+    Creative Direction:
+    <a href="https://www.instagram.com/_onpointjr/" target="_blank" class="text-blue-400 hover:text-blue-600">
+      onpointjr
+    </a>
+  </div>
+
+</body>
+</html>
